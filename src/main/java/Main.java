@@ -67,12 +67,31 @@ public class Main {
             System.out.println();
 
             //alg3
+            System.out.println("alg3");
+
+            // 29/12/2001 - 3/1/2002 = 29 30 31 1 2 3 = 6
             System.out.println("TEST ALG3 dez - jan - 29 - 3 -2001 - 2002 = " +
-                    (main.alg3(29,11,2001,3,0,2002)==5));
-            System.out.println("TEST ALG3 dez - jan - 29 - 3 -2001 - 2005 = " +
-                    (main.alg3(29,11,2001,3,0,2005)==1101));
-            System.out.println("TEST ALG3 dez - jan - 29 - 3 -2001 - 2015 = " +
-                    (main.alg3(29,11,2001,3,0,2015)==4753));
+                    (main.alg3(29,11,2001,3,0,2002)==6));
+
+            // 29/12/2002 - 3/3/2003 = 29 30 31 +31 +28  1 2 3 = +3 +31 +28 +3
+            System.out.println("TEST ALG3 dez - apr - 29 - 3 -2002 - 2003 = " +
+                    (main.alg3(29,11,2002,3,2,2003) == +3 +31 +28 +3));
+
+            // 29/12/2003 - 3/3/2004 = 29 30 31 +31 +29  1 2 3 = +3 +31 +29 +3
+            System.out.println("TEST ALG3 dez - apr - 29 - 3 -2002 - 2003 = " +
+                    (main.alg3(29,11,2003,3,2,2004) == +3 +31 +29 +3));
+
+            //                                  2002 2003 2004
+            // 29/12/2001 - 3/3/2005 = 29 30 31 +365 +365 +366 +31 +28  1 2 3 = +3 +365 +365 +366 +31 +28 +3
+            System.out.println("TEST ALG3 dez - mar - 29 - 3 -2001 - 2005 = " +
+                    (main.alg3(29,11,2001,3,2,2005)==+3 +365 +365 +366 +31 +28 +3));
+
+            // 15 - 1 = 14 - 3 -1 = 10*365
+            // 2004 2008 2012 = 3*366
+            // 29/12/2001 - 3/1/2015 =
+            System.out.println("TEST ALG3 dez - mar - 29 - 3 -2001 - 2015 = " +
+                    (main.alg3(29,11,2001,3,2,2015)==
+                            +3 +31 +28 +3 +10*365 +3*366));
 
             //bissextile
             System.out.println();
@@ -96,6 +115,7 @@ public class Main {
             System.out.println("alg3");
             System.out.println("Test alg3 1/1/2000 - 1/1/2001 = " +
                     main.alg3(1,0,2000,1,0,2001));
+
         }
 
         public int calculateDaysBetween(
@@ -148,9 +168,9 @@ public class Main {
 
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }else{ //y1 is not bissextile
@@ -160,9 +180,9 @@ public class Main {
 
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }
@@ -184,9 +204,9 @@ public class Main {
                     }
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }else{ //y1 is not bissextile
@@ -204,13 +224,14 @@ public class Main {
 
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers) +1;
+                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
                     }
                 }
             }
 
+//            System.out.println("result = " + result);
             return result;
         }
 
