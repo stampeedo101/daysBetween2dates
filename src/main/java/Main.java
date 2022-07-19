@@ -1,8 +1,8 @@
 public class Main {
 
-        //                          1  2  3  4  5  6  7  8  9 10 11 12
-        static int[] monthsDaysNumbers = {31,28,30,31,30,31,30,31,31,30,31,30};
-        static int[] monthsDaysNumbersBi = {31,29,30,31,30,31,30,31,31,30,31,30};
+        //                                 1  2  3  4  5  6  7  8  9 10 11 12
+        static int[] monthsDaysNumbers = {31,28,31,30,31,30,31,31,30,31,30,31};
+        static int[] monthsDaysNumbersBi = {31,29,31,30,31,30,31,31,30,31,30,31};
 
         public static void main(String[] args) {
 
@@ -44,23 +44,25 @@ public class Main {
             //29/1 - 3/3 = +3 +28* +3
             System.out.println("TEST ALG2 jan - mar - 29 - 3 = " +
                     (main.alg2(29,0,3,2,monthsDaysNumbers) == (3+28+3)));
-            //29/1 - 3/4 =
+            //29/1 - 3/4 = +3 +28* +31 +3
             System.out.println("TEST ALG2 jan - apr - 29 - 3 = " +
-                    (main.alg2(29,0,3,3,monthsDaysNumbers)==63));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - may - 29 - 3 = " + (main.alg2(29,0,3,4,monthsDaysNumbers)));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - jun - 29 - 3 = " + (main.alg2(29,0,3,5,monthsDaysNumbers)));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - jul - 29 - 3 = " + (main.alg2(29,0,3,6,monthsDaysNumbers)));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - aug - 29 - 3 = " + (main.alg2(29,0,3,7,monthsDaysNumbers)));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - oct - 29 - 3 = " + (main.alg2(29,0,3,8,monthsDaysNumbers)));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - nov - 29 - 3 = " + (main.alg2(29,0,3,9,monthsDaysNumbers)));
-            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - dez - 29 - 3 = " + (main.alg2(29,0,3,10,monthsDaysNumbers)));
+                    (main.alg2(29,0,3,3,monthsDaysNumbers)==3 +28 +31 +3));
+            //29/1 - 3/5 = +3 +28* +30 +31 +3
+            System.out.println("TEST ALG2 jan - may - 29 - 3 = " +
+                    (main.alg2(29,0,3,4,monthsDaysNumbers) == +3 +28 +31 +30 +3));
+//            //29/1 - 3/3 =
+//            System.out.println("TEST ALG2 jan - jun - 29 - 3 = " + (main.alg2(29,0,3,5,monthsDaysNumbers)));
+//            //29/1 - 3/3 =
+//            System.out.println("TEST ALG2 jan - jul - 29 - 3 = " + (main.alg2(29,0,3,6,monthsDaysNumbers)));
+//            //29/1 - 3/3 =
+//            System.out.println("TEST ALG2 jan - aug - 29 - 3 = " + (main.alg2(29,0,3,7,monthsDaysNumbers)));
+//            //29/1 - 3/3 =
+//            System.out.println("TEST ALG2 jan - oct - 29 - 3 = " + (main.alg2(29,0,3,8,monthsDaysNumbers)));
+//            //29/1 - 3/3 =
+            System.out.println("TEST ALG2 jan - nov - 29 - 3 = " + (main.alg2(29,0,3,10,monthsDaysNumbers)== +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +3));
+            //                   2   3   4   5   6   7   8   9  10  11 12
+            //29/1 - 3/12 = +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +30 +3
+            System.out.println("TEST ALG2 jan - dez - 29 - 3 = " + (main.alg2(29,0,3,11,monthsDaysNumbers) == +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +30 +3));
 
             System.out.println();
 
