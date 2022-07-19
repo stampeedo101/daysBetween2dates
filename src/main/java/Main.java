@@ -86,9 +86,9 @@ public class Main {
             //31 +29  1 = 29 + 2 = 31
             System.out.println("TEST Y1 == Y2 jan mar 31 - 1  = " +
                     (main.calculateDaysBetween(31,0,2000,1,2,2000) == (29+2) ));
-            //31 +29 +30 +31 +30  1 = 2 + 29 + 30 + 31 + 30 =
+            //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
             System.out.println("TEST Y1 == Y2 jan jun 31 - 1  = " +
-                    (main.calculateDaysBetween(31,0,2000,1,5,2000) == (2+29+30+31+30) ));
+                    (main.calculateDaysBetween(31,0,2000,1,5,2000) == (+1 + 29 + 31 + 30 + 31 +1) ));
 
             System.out.println();
             //alg3
