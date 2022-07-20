@@ -141,11 +141,12 @@ public class Main {
                 if(m1 == m2){
                     if(d1 == d2){
                         return 0;
-                    }else{//alg1     d1!= d2
+                    }else{//alg1     d1 != d2
                         return d2-d1;
                     }
-                }else{//alg2         m1!= m2
+                }else{//alg2         m1 != m2
                     if(y1%4==0){
+                        //year bissextile
                         return sameYearAndDifferentMonth(d1,m1,d2,m2,monthsDaysNumbersBi) ;
                     }
                     //year not bissextile
@@ -158,6 +159,7 @@ public class Main {
 
         public int sameYearAndDifferentMonth(int d1, int m1, int d2, int m2, int[] year){
             int result = 0;
+            //sum of days from months between dates
             for(int i = m1;i<m2;i++){
                 result = result+year[i];
             }
@@ -172,27 +174,25 @@ public class Main {
             int result=0;
             //diff (d1/m1/y1 - 31/12/y1) + sumDayYearsBetween + alg2(01/01/y2 - d2/m2/y2)
 
-            if(y2-y1==1){//days between date1 and last day of y1
+            if(y2-y1 == 1){//days between date1 and last day of y1 + days between the first day in y2 and date2
 
                 if(itIsBissextile(y1)){
-                    // date1 < 29/02 and date2 > 28/02
-                    //days from date1 to last day of y1
+                    //days between date1 and last day of y1
                     result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbersBi);
 
                     if(itIsBissextile(y2)){
-                        //days from first day in y2 and date2
+                        //days between the first day in y2 and date2
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }else{ //y1 is not bissextile
-                // date1 < 29/02 and date2 > 28/02
-                //days from date1 to last day of y1
+                //days between date1 and last day of y1
                 result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbers);
 
                     if(itIsBissextile(y2)){
-                        //days from first day in y2 and date2
+                        //days between the first day and y2 and date2
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
@@ -203,8 +203,7 @@ public class Main {
             }else{
 
                 if(itIsBissextile(y1)){
-                    // date1 < 29/02 and date2 > 28/02
-                    //days from date1 to last day of y1
+                    //days between date1 and last day of y1
                     result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbersBi);
 
                     for (int i = (y1+1) ;i < y2; i++){ //sumDaysBetween y1 y2
@@ -216,15 +215,14 @@ public class Main {
 
                     }
                     if(itIsBissextile(y2)){
-                        //days from first day in y2 and date2
+                        //days between the first day in y2 and date2
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }else{ //y1 is not bissextile
-                    // date1 < 29/02 and date2 > 28/02
-                    //days from date1 to last day of y1
+                    //days between date1 and last day of y1
                     result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbers);
 
                     for (int i = (y1+1) ;i < y2; i++) { //sumDaysBetween y1 y2
@@ -236,7 +234,7 @@ public class Main {
                     }
 
                     if(itIsBissextile(y2)){
-                        //days from first day in y2 and date2
+                        //days between the first day in y2 and date2
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
                         result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
@@ -259,6 +257,11 @@ public class Main {
 
             if(!(m1 >= 0 && m1 < 12)){
                 System.out.println("m1 error");
+                return false;
+            }
+
+            if(!(m2 >= 0 && m2 < 12)){
+                System.out.println("m2 error");
                 return false;
             }
 
@@ -287,11 +290,6 @@ public class Main {
                     System.out.println("d2 error");
                     return false;
                 }
-            }
-
-            if(!(m2 >= 0 && m2 < 12)){
-                System.out.println("m2 error");
-                return false;
             }
 
             if(y1 == y2){
