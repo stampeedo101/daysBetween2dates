@@ -34,22 +34,22 @@ public class Main {
 
             //1/1 - 3/2 = +31 +3 =34
             System.out.println("TEST ALG2 jan - feb - 1 - 3 = " +
-                    (main.alg2(1,0,3,1,monthsDaysNumbers) == (31+3)));
+                    (main.sameYearAndDifferentMonth(1,0,3,1,monthsDaysNumbers) == (31+3)));
             //29/1 - 3/2 = 29 30 31 1 2 3 = +3 +3 = 6
             System.out.println("TEST ALG2 jan - feb - 29 - 3 = " +
-                    (main.alg2(29,0,3,1,monthsDaysNumbers) == (3+3)));
+                    (main.sameYearAndDifferentMonth(29,0,3,1,monthsDaysNumbers) == (3+3)));
             // 29/1 - 29/2 = 29 30 31 +29 = +3 +29
             System.out.println("TEST ALG2 jan - feb - 29 - 29 = " +
-                    (main.alg2(29,0,29,1,monthsDaysNumbers) == (3+29)));
+                    (main.sameYearAndDifferentMonth(29,0,29,1,monthsDaysNumbers) == (3+29)));
             //29/1 - 3/3 = +3 +28* +3
             System.out.println("TEST ALG2 jan - mar - 29 - 3 = " +
-                    (main.alg2(29,0,3,2,monthsDaysNumbers) == (3+28+3)));
+                    (main.sameYearAndDifferentMonth(29,0,3,2,monthsDaysNumbers) == (3+28+3)));
             //29/1 - 3/4 = +3 +28* +31 +3
             System.out.println("TEST ALG2 jan - apr - 29 - 3 = " +
-                    (main.alg2(29,0,3,3,monthsDaysNumbers)==3 +28 +31 +3));
+                    (main.sameYearAndDifferentMonth(29,0,3,3,monthsDaysNumbers)==3 +28 +31 +3));
             //29/1 - 3/5 = +3 +28* +30 +31 +3
             System.out.println("TEST ALG2 jan - may - 29 - 3 = " +
-                    (main.alg2(29,0,3,4,monthsDaysNumbers) == +3 +28 +31 +30 +3));
+                    (main.sameYearAndDifferentMonth(29,0,3,4,monthsDaysNumbers) == +3 +28 +31 +30 +3));
 //            //29/1 - 3/3 =
 //            System.out.println("TEST ALG2 jan - jun - 29 - 3 = " + (main.alg2(29,0,3,5,monthsDaysNumbers)));
 //            //29/1 - 3/3 =
@@ -59,10 +59,10 @@ public class Main {
 //            //29/1 - 3/3 =
 //            System.out.println("TEST ALG2 jan - oct - 29 - 3 = " + (main.alg2(29,0,3,8,monthsDaysNumbers)));
 //            //29/1 - 3/3 =
-            System.out.println("TEST ALG2 jan - nov - 29 - 3 = " + (main.alg2(29,0,3,10,monthsDaysNumbers)== +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +3));
+            System.out.println("TEST ALG2 jan - nov - 29 - 3 = " + (main.sameYearAndDifferentMonth(29,0,3,10,monthsDaysNumbers)== +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +3));
             //                   2   3   4   5   6   7   8   9  10  11 12
             //29/1 - 3/12 = +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +30 +3
-            System.out.println("TEST ALG2 jan - dez - 29 - 3 = " + (main.alg2(29,0,3,11,monthsDaysNumbers) == +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +30 +3));
+            System.out.println("TEST ALG2 jan - dez - 29 - 3 = " + (main.sameYearAndDifferentMonth(29,0,3,11,monthsDaysNumbers) == +3 +28 +31 +30 +31 +30 +31 +31 +30 +31 +30 +3));
 
             System.out.println();
 
@@ -71,26 +71,26 @@ public class Main {
 
             // 29/12/2001 - 3/1/2002 = 29 30 31 1 2 3 = 6
             System.out.println("TEST ALG3 dez - jan - 29 - 3 -2001 - 2002 = " +
-                    (main.alg3(29,11,2001,3,0,2002)==6));
+                    (main.allDifferent(29,11,2001,3,0,2002)==6));
 
             // 29/12/2002 - 3/3/2003 = 29 30 31 +31 +28  1 2 3 = +3 +31 +28 +3
             System.out.println("TEST ALG3 dez - apr - 29 - 3 -2002 - 2003 = " +
-                    (main.alg3(29,11,2002,3,2,2003) == +3 +31 +28 +3));
+                    (main.allDifferent(29,11,2002,3,2,2003) == +3 +31 +28 +3));
 
             // 29/12/2003 - 3/3/2004 = 29 30 31 +31 +29  1 2 3 = +3 +31 +29 +3
             System.out.println("TEST ALG3 dez - apr - 29 - 3 -2002 - 2003 = " +
-                    (main.alg3(29,11,2003,3,2,2004) == +3 +31 +29 +3));
+                    (main.allDifferent(29,11,2003,3,2,2004) == +3 +31 +29 +3));
 
             //                                  2002 2003 2004
             // 29/12/2001 - 3/3/2005 = 29 30 31 +365 +365 +366 +31 +28  1 2 3 = +3 +365 +365 +366 +31 +28 +3
             System.out.println("TEST ALG3 dez - mar - 29 - 3 -2001 - 2005 = " +
-                    (main.alg3(29,11,2001,3,2,2005)==+3 +365 +365 +366 +31 +28 +3));
+                    (main.allDifferent(29,11,2001,3,2,2005)==+3 +365 +365 +366 +31 +28 +3));
 
             // 15 - 1 = 14 - 3 -1 = 10*365
             // 2004 2008 2012 = 3*366
             // 29/12/2001 - 3/1/2015 =
             System.out.println("TEST ALG3 dez - mar - 29 - 3 -2001 - 2015 = " +
-                    (main.alg3(29,11,2001,3,2,2015)==
+                    (main.allDifferent(29,11,2001,3,2,2015)==
                             +3 +31 +28 +3 +10*365 +3*366));
 
             //bissextile
@@ -114,7 +114,10 @@ public class Main {
 
             System.out.println("alg3");
             System.out.println("Test alg3 1/1/2000 - 1/1/2001 = " +
-                    main.alg3(1,0,2000,1,0,2001));
+                    main.allDifferent(1,0,2000,1,0,2001));
+
+            System.out.println();
+
 
         }
 
@@ -122,6 +125,9 @@ public class Main {
                 int d1, int m1, int y1,
                 int d2, int m2, int y2
         ){
+            if(!(itsValidInput(d1,m1,y1,d2,m2,y2))){
+                return 0;
+            }
 
             if(y1 == y2){
                 if(m1 == m2){
@@ -132,67 +138,66 @@ public class Main {
                     }
                 }else{//alg2         m1!= m2
                     if(y1%4==0){
-                        return alg2(d1,m1,d2,m2,monthsDaysNumbersBi) ;
+                        return sameYearAndDifferentMonth(d1,m1,d2,m2,monthsDaysNumbersBi) ;
                     }
                     //year not bissextile
-                    return alg2(d1,m1,d2,m2,monthsDaysNumbers) ;
+                    return sameYearAndDifferentMonth(d1,m1,d2,m2,monthsDaysNumbers) ;
                 }
             }else{// alg3 ->    y1 != y2
-                return alg3(d1,m1,y1,d2,m2,y2) ;
+                return allDifferent(d1,m1,y1,d2,m2,y2) ;
             }
         }
 
-        public int alg2(int d1, int m1, int d2, int m2, int[] a){
+        public int sameYearAndDifferentMonth(int d1, int m1, int d2, int m2, int[] year){
             int result = 0;
             for(int i = m1;i<m2;i++){
-                result = result+a[i];
+                result = result+year[i];
             }
             result = result + (-d1 + 1) + d2;
             return result;
 
-
         }
 
-        public int alg3(int d1, int m1, int y1,
-                        int d2, int m2, int y2
+        public int allDifferent(int d1, int m1, int y1,
+                                int d2, int m2, int y2
         ){
             int result=0;
-            //diff (d1/m1/y1 - 31/12/y1) + sDayYearBetween + alg2(01/01/y2 - d2/m2/y2)
+            //diff (d1/m1/y1 - 31/12/y1) + sumDayYearsBetween + alg2(01/01/y2 - d2/m2/y2)
 
             if(y2-y1==1){//days between date1 and last day of y1
 
                 if(itIsBissextile(y1)){
                     // date1 < 29/02 and date2 > 28/02
                     //days from date1 to last day of y1
-                    result = alg2(d1,m1,31,11,monthsDaysNumbersBi);
+                    result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbersBi);
 
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }else{ //y1 is not bissextile
                 // date1 < 29/02 and date2 > 28/02
                 //days from date1 to last day of y1
-                result = alg2(d1,m1,31,11,monthsDaysNumbers);
+                result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbers);
 
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }
 
-            }else if(y2-y1>1){
+            }else{
 
                 if(itIsBissextile(y1)){
                     // date1 < 29/02 and date2 > 28/02
                     //days from date1 to last day of y1
-                    result = alg2(d1,m1,31,11,monthsDaysNumbersBi);
+                    result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbersBi);
 
                     for (int i = (y1+1) ;i < y2; i++){ //sumDaysBetween y1 y2
                         if(i%4==0){
@@ -204,15 +209,15 @@ public class Main {
                     }
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
                     }
 
                 }else{ //y1 is not bissextile
                     // date1 < 29/02 and date2 > 28/02
                     //days from date1 to last day of y1
-                    result = alg2(d1,m1,31,11,monthsDaysNumbers);
+                    result = sameYearAndDifferentMonth(d1,m1,31,11,monthsDaysNumbers);
 
                     for (int i = (y1+1) ;i < y2; i++) { //sumDaysBetween y1 y2
                         if (i % 4 == 0) {
@@ -224,15 +229,55 @@ public class Main {
 
                     if(itIsBissextile(y2)){
                         //days from first day in y2 and date2
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbersBi);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbersBi);
                     }else {//y2 is not bissextile
-                        result = result + alg2(01,0,d2,m2,monthsDaysNumbers);
+                        result = result + sameYearAndDifferentMonth(01,0,d2,m2,monthsDaysNumbers);
                     }
                 }
             }
 
 //            System.out.println("result = " + result);
             return result;
+        }
+
+        private boolean itsValidInput(int d1, int m1, int y1, int d2, int m2, int y2){
+
+            if(itIsBissextile(y1)){
+                if(!(d1 > 0 && d1 <= monthsDaysNumbersBi[m1])){
+                    System.out.println("d1 error");
+                    return false;
+                }
+
+            }else {
+                if(!(d1 > 0 && d1 <= monthsDaysNumbers[m1])){
+                    System.out.println("d1 error");
+                    return false;
+                }
+            }
+
+            if(!(m1 >= 0 && m1 < 12)){
+                System.out.println("m1 error");
+                return false;
+            }
+
+            if(itIsBissextile(y2)){
+                if(!(d2 > 0 && d2 <= monthsDaysNumbersBi[m2])){
+                    System.out.println("d2 error");
+                    return false;
+                }
+
+            }else {
+                if(!(d2 > 0 && d2 <= monthsDaysNumbers[m2])){
+                    System.out.println("d2 error");
+                    return false;
+                }
+            }
+
+            if(!(m2 >= 0 && m2 < 12)){
+                System.out.println("m2 error");
+                return false;
+            }
+            return true;
         }
 
         private boolean itIsBissextile(int year){
