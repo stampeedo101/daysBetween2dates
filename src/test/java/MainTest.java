@@ -8,6 +8,11 @@ class MainTest {
 
     @Test
     void main() {
+
+        calculateDaysBetween();
+        sameYearAndDifferentMonth();
+        allDifferent();
+        itsValidInput();
     }
 
     @Test
@@ -123,9 +128,5 @@ class MainTest {
 
     }
 
-    @Test
-    void itIsBissextile(){
-
-    }
 
 }
