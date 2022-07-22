@@ -110,6 +110,17 @@ class MainTest {
     @Test
     void itsValidInput(){
 
+        //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
+        //error d1 > 31
+        assertEquals(0, main.calculateDaysBetween(32,0,2000,1,5,2000));
+
+        //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
+        //error m1 > 11
+        assertEquals(0,main.calculateDaysBetween(31,12,2000,1,5,2000));
+
+        //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
+        assertEquals(0,main.calculateDaysBetween(31,0,0,1,5,2000));
+
     }
 
     @Test

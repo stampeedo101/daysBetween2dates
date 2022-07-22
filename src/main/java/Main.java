@@ -31,22 +31,7 @@ public class Main {
 
 
 
-            System.out.println();
-            //itsValidInput
 
-            //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
-            System.out.println("test invalid d1 " +
-                    (main.calculateDaysBetween(32,0,2000,1,5,2000) == (+1 + 29 + 31 + 30 + 31 +1) ));
-
-            //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
-            System.out.println("test invalid m1 " +
-                    (main.calculateDaysBetween(31,12,2000,1,5,2000) == (+1 + 29 + 31 + 30 + 31 +1) ));
-
-            //31 +29 +30 +31 +30 +1 = +1 + 29 + 31 + 30 + 31 +1 =
-            System.out.println("test invalid y1 " +
-                    (main.calculateDaysBetween(31,0,0,1,5,2000) == (+1 + 29 + 31 + 30 + 31 +1) ));
-
-            System.out.println();
 
 
         }
@@ -171,10 +156,12 @@ public class Main {
         private boolean itsValidInput(int d1, int m1, int y1, int d2, int m2, int y2){
             if(y1 < 1){
                 System.out.println("y1 error");
+                return false;
             }
 
             if(y2 < 1){
                 System.out.println("y2 error");
+                return false;
             }
 
             if(!(m1 >= 0 && m1 < 12)){
